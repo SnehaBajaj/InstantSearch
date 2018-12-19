@@ -139,9 +139,11 @@ public class GeneralizedSuffixTree {
                 }
 
                 if (label.length() >= word.length() - i) {
+//                    System.out.println(currentEdge.getLabel());
                     return currentEdge.getDest();
                 } else {
                     // advance to next node
+//                    System.out.println(currentEdge.getLabel());
                     currentNode = currentEdge.getDest();
                     i += lenToMatch - 1;
                 }

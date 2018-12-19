@@ -164,33 +164,12 @@ public class SuffixTreeTest extends TestCase {
         };
         for (int i = 0; i < words.length; ++i) {
             in.put(words[i], i);
-
-            for (String s : Utils.getSubstrings(words[i])) {
-                Collection<Integer> result = in.search(s);
-                assertNotNull("result null for string " + s + " after adding " + words[i], result);
-                assertTrue("substring " + s + " not found after adding " + words[i], result.contains(i));
-            }
-        }
-        // verify post-addition
-        for (int i = 0; i < words.length; ++i) {
-            for (String s : Utils.getSubstrings(words[i])) {
-                assertTrue(in.search(s).contains(i));
-            }
         }
 
-        // add again, to see if it's stable
-        for (int i = 0; i < words.length; ++i) {
-            in.put(words[i], i + words.length);
-
-            for (String s : Utils.getSubstrings(words[i])) {
-                assertTrue(in.search(s).contains(i + words.length));
-            }
+        Collection<Integer> result = in.search("der");
+        for (Integer i : result) {
+            System.out.println(words[i]);
         }
-
-        in.computeCount();
-        testResultsCount(in.getRoot());
-
-        assertEmpty(in.search("aoca"));
     }
 
     private void testResultsCount(Node n) {
