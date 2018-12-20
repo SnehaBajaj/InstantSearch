@@ -1,6 +1,6 @@
 package com.search.demo.service;
 
-import com.search.demo.model.DataSource;
+import com.search.demo.data.DataSource;
 import com.search.demo.model.GeneralizedSuffixTree;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

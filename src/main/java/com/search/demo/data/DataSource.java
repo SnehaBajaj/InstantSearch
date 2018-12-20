@@ -1,4 +1,4 @@
-package com.search.demo.model;
+package com.search.demo.data;
 
 public class DataSource {
     String[] dataSource;

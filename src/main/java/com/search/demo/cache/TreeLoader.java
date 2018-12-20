@@ -1,6 +1,6 @@
 package com.search.demo.cache;
 
-import com.search.demo.model.DataSource;
+import com.search.demo.data.DataSource;
 import com.search.demo.model.GeneralizedSuffixTree;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
