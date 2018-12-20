@@ -1,4 +1,4 @@
-/**
+package com.search.demo.model; /**
  * Copyright 2012 Alessandro Bahgat Shehata
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,6 +15,7 @@
  */
 
 import junit.framework.TestCase;
+import com.search.demo.util.Utils;
 
 import java.util.Arrays;
 import java.util.Collection;

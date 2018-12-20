@@ -1,4 +1,4 @@
-/**
+package com.search.demo.model; /**
  * Copyright 2012 Alessandro Bahgat Shehata
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +15,8 @@
  */
 
 /**
- * Represents an Edge in the Suffix Tree.
- * It has a label and a destination Node
+ * Represents an com.search.demo.model.Edge in the Suffix Tree.
+ * It has a label and a destination com.search.demo.model.Node
  */
 class Edge {
     private String label;

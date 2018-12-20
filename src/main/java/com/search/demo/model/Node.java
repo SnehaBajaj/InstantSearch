@@ -1,4 +1,4 @@
-/**
+package com.search.demo.model; /**
  * Copyright 2012 Alessandro Bahgat Shehata
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -73,7 +73,7 @@ class Node {
     private int resultCount = -1;
 
     /**
-     * Creates a new Node
+     * Creates a new com.search.demo.model.Node
      */
     Node() {
         edges = new EdgeBag();
@@ -167,7 +167,7 @@ class Node {
         }
         return false;
         // Java 5 equivalent to
-        // return java.util.Arrays.binarySearch(data, 0, lastIdx, index) >= 0;
+        // return java.com.search.demo.util.Arrays.binarySearch(data, 0, lastIdx, index) >= 0;
     }
 
     /**

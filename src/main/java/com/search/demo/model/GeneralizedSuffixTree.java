@@ -1,4 +1,4 @@
-/**
+package com.search.demo.model; /**
  * Copyright 2012 Alessandro Bahgat Shehata
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -290,7 +290,7 @@ public class GeneralizedSuffixTree {
     }
 
     /**
-     * Return a (Node, String) (n, remainder) pair such that n is a farthest descendant of
+     * Return a (com.search.demo.model.Node, String) (n, remainder) pair such that n is a farthest descendant of
      * s (the input node) that can be reached by following a path of edges denoting
      * a prefix of inputstr and remainder will be string that must be
      * appended to the concatenation of labels from s to n to get inpustr.
@@ -319,9 +319,9 @@ public class GeneralizedSuffixTree {
     /**
      * Updates the tree starting from inputNode and by adding stringPart.
      * 
-     * Returns a reference (Node, String) pair for the string that has been added so far.
+     * Returns a reference (com.search.demo.model.Node, String) pair for the string that has been added so far.
      * This means:
-     * - the Node will be the Node that can be reached by the longest path string (S1)
+     * - the com.search.demo.model.Node will be the com.search.demo.model.Node that can be reached by the longest path string (S1)
      *   that can be obtained by concatenating consecutive edges in the tree and
      *   that is a substring of the string added so far to the tree.
      * - the String will be the remainder that must be added to S1 to get the string
@@ -421,7 +421,7 @@ public class GeneralizedSuffixTree {
     }
 
     /**
-     * An utility object, used to store the data returned by the GeneralizedSuffixTree GeneralizedSuffixTree.searchWithCount method.
+     * An utility object, used to store the data returned by the com.search.demo.model.GeneralizedSuffixTree com.search.demo.model.GeneralizedSuffixTree.searchWithCount method.
      * It contains a collection of results and the total number of results present in the GST.
      * @see GeneralizedSuffixTree#searchWithCount(String, int)
      */
