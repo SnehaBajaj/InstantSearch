@@ -7,7 +7,9 @@
           $("button").click(function(){
             var $key = $("#myInput").val();
             $.get("http://localhost:8080/search/"+$key, function(data, status){
-              alert("Data: " + data + "\nStatus: " + status);
+                for (i = 0; i < data.length; i++) {
+                    alert("Row " + i + ": " + data[i] + "\n");
+                }
             });
           });
         });
