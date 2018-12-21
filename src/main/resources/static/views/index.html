@@ -1,15 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+
+        #myInput {
+          background-position: 10px 12px;
+          background-repeat: no-repeat;
+          width: 30%;
+          font-size: 16px;
+          padding: 12px 20px 12px 40px;
+          border: 1px solid #ddd;
+          margin-bottom: 12px;
+        }
+
+        #button {
+          background-position: 10px 12px;
+          background-repeat: no-repeat;
+          width: 30%;
+          font-size: 16px;
+          padding: 12px 20px 12px 40px;
+          border: 1px solid #ddd;
+          margin-bottom: 12px;
+        }
+
+        #myUL {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        #myUL li a {
+          border: 1px solid #ddd;
+          margin-top: -1px; /* Prevent double borders */
+          background-color: #f6f6f6;
+          padding: 12px;
+          text-decoration: none;
+          font-size: 18px;
+          color: black;
+          display: block
+        }
+
+        #myUL li a:hover:not(.header) {
+          background-color: #eee;
+        }
+    </style>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
           $("button").click(function(){
             var $key = $("#myInput").val();
             $.get("http://localhost:8080/search/"+$key, function(data, status){
-                for (i = 0; i < data.length; i++) {
-                    alert("Row " + i + ": " + data[i] + "\n");
-                }
+
+                var names = data;
+		        var ul = document.createElement('ul');
+		        document.getElementById('myUL').appendChild(ul);
+
+		        names.forEach(function(name){
+			        var li = document.createElement('li');
+			        ul.appendChild(li);
+			        li.innerHTML += name;
+		        });
+
             });
           });
         });
@@ -21,6 +77,9 @@
 
 
 <input type="text" id="myInput" placeholder="Search for name..">
-<button type="button">Search</button>
+<button type="button" id="button">Search</button>
+
+<ul id="myUL"></ul>
+
 </body>
 </html>
