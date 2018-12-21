@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+    </style>
+</head>
+<body>
+
+<h2>Instant Search</h2>
+
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for name.." title="Type in a name">
+
+<script>
+ function myFunction() {
+
+    var searchKey = document.getElementById("myInput");
+    var key = searchKey.value;
+    console.log(key);
+    invokeService();
+
+    function invokeService() {
+    $(document).ready(function() {
+          $.ajax({
+            type: "GET",
+            async: false,
+            url: "http://localhost:8080/search/key",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            processData: true,
+            success: function(result) {
+              AjaxSucceeded(result);
+            },
+            eror: AjaxFailed
+          });
+
+          function AjaxSucceeded(result) {
+            alert(result);
+          }
+
+          function AjaxFailed(result) {
+            alert(result.status + '' + result.statusText);
+          }
+        });
+    }
+ }
+</script>
+</body>
+</html>
